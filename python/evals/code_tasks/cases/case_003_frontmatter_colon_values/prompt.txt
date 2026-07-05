@@ -1,0 +1,4 @@
+Fix parse_frontmatter so it correctly handles simple YAML-style frontmatter.
+
+Values may contain additional colons, and content with an opening delimiter but no closing delimiter should be treated as plain body text.
+

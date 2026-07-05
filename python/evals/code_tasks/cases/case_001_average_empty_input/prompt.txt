@@ -1,0 +1,4 @@
+Fix the average function so it handles empty input explicitly.
+
+The tests expect average([]) to raise ValueError with a useful message, while normal numeric lists should still return the arithmetic mean.
+

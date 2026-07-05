@@ -1,0 +1,4 @@
+Fix slugify so it produces URL-friendly slugs.
+
+The implementation should lowercase text, remove punctuation, collapse repeated separators, and trim leading/trailing separators.
+

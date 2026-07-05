@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "tests_run": 11,
+  "failures": 0,
+  "errors": 0,
+  "duration_seconds": 2.628,
+  "scope": [
+    "tool schema and deferred tool activation",
+    "permission modes and project permission rules",
+    "read-before-edit and mtime freshness protection",
+    "tool result truncation",
+    "context budget truncation, stale-result snip, and microcompact",
+    "large tool-result persistence",
+    "frontmatter parsing and memory index CRUD"
+  ]
+}

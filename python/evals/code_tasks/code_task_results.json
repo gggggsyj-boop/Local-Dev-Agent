@@ -1,0 +1,95 @@
+{
+  "mode": "oracle",
+  "tasks_run": 3,
+  "passed": 3,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "baseline_failed": 3,
+  "duration_seconds": 0.988,
+  "results": [
+    {
+      "case_id": "case_001_average_empty_input",
+      "mode": "oracle",
+      "baseline_passed": false,
+      "final_passed": true,
+      "baseline": {
+        "command": "D:\\soft\\Python313\\python.exe -m unittest discover -s . -p \"test_*.py\"",
+        "returncode": 1,
+        "passed": false,
+        "duration_seconds": 0.201,
+        "stdout_tail": "",
+        "stderr_tail": ".E\n======================================================================\nERROR: test_empty_input_raises_value_error (test_stats_utils.AverageTests.test_empty_input_raises_value_error)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Temp\\case_001_average_empty_input-umr6qqag\\repo\\test_stats_utils.py\", line 12, in test_empty_input_raises_value_error\n    average([])\n    ~~~~~~~^^^^\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Temp\\case_001_average_empty_input-umr6qqag\\repo\\stats_utils.py\", line 2, in average\n    return sum(values) / len(values)\n           ~~~~~~~~~~~~^~~~~~~~~~~~~\nZeroDivisionError: division by zero\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nFAILED (errors=1)\n"
+      },
+      "final": {
+        "command": "D:\\soft\\Python313\\python.exe -m unittest discover -s . -p \"test_*.py\"",
+        "returncode": 0,
+        "passed": true,
+        "duration_seconds": 0.15,
+        "stdout_tail": "",
+        "stderr_tail": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+      },
+      "agent": null,
+      "changed_files": [
+        "stats_utils.py"
+      ],
+      "tests_modified": [],
+      "workdir": null
+    },
+    {
+      "case_id": "case_002_slugify_normalization",
+      "mode": "oracle",
+      "baseline_passed": false,
+      "final_passed": true,
+      "baseline": {
+        "command": "D:\\soft\\Python313\\python.exe -m unittest discover -s . -p \"test_*.py\"",
+        "returncode": 1,
+        "passed": false,
+        "duration_seconds": 0.168,
+        "stdout_tail": "",
+        "stderr_tail": "FFF\n======================================================================\nFAIL: test_empty_text_becomes_empty_slug (test_slug.SlugifyTests.test_empty_text_becomes_empty_slug)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Temp\\case_002_slugify_normalization-mf71hju4\\repo\\test_slug.py\", line 14, in test_empty_text_becomes_empty_slug\n    self.assertEqual(slugify(\" ... \"), \"\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: '-...-' != ''\n- -...-\n\n\n======================================================================\nFAIL: test_punctuation_is_removed (test_slug.SlugifyTests.test_punctuation_is_removed)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Temp\\case_002_slugify_normalization-mf71hju4\\repo\\test_slug.py\", line 8, in test_punctuation_is_removed\n    self.assertEqual(slugify(\"Hello, World!\"), \"hello-world\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'hello,-world!' != 'hello-world'\n- hello,-world!\n?      -      -\n+ hello-world\n\n\n======================================================================\nFAIL: test_repeated_separators_are_collapsed (test_slug.SlugifyTests.test_repeated_separators_are_collapsed)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Temp\\case_002_slugify_normalization-mf71hju4\\repo\\test_slug.py\", line 11, in test_repeated_separators_are_collapsed\n    self.assertEqual(slugify(\"  Agent   Loop + Tools  \"), \"agent-loop-tools\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: '--agent---loop-+-tools--' != 'agent-loop-tools'\n- --agent---loop-+-tools--\n? --      --    --      --\n+ agent-loop-tools\n\n\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nFAILED (failures=3)\n"
+      },
+      "final": {
+        "command": "D:\\soft\\Python313\\python.exe -m unittest discover -s . -p \"test_*.py\"",
+        "returncode": 0,
+        "passed": true,
+        "duration_seconds": 0.146,
+        "stdout_tail": "",
+        "stderr_tail": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+      },
+      "agent": null,
+      "changed_files": [
+        "slug.py"
+      ],
+      "tests_modified": [],
+      "workdir": null
+    },
+    {
+      "case_id": "case_003_frontmatter_colon_values",
+      "mode": "oracle",
+      "baseline_passed": false,
+      "final_passed": true,
+      "baseline": {
+        "command": "D:\\soft\\Python313\\python.exe -m unittest discover -s . -p \"test_*.py\"",
+        "returncode": 1,
+        "passed": false,
+        "duration_seconds": 0.146,
+        "stdout_tail": "",
+        "stderr_tail": "EEE\n======================================================================\nERROR: test_invalid_header_line_is_ignored (test_frontmatter_parser.FrontmatterParserTests.test_invalid_header_line_is_ignored)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Temp\\case_003_frontmatter_colon_values-wrndkmef\\repo\\test_frontmatter_parser.py\", line 20, in test_invalid_header_line_is_ignored\n    meta, body = parse_frontmatter(\"---\\ntitle: OK\\ninvalid line\\n---\\nBody\")\n                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Temp\\case_003_frontmatter_colon_values-wrndkmef\\repo\\frontmatter_parser.py\", line 8, in parse_frontmatter\n    key, value = line.split(\":\")\n    ^^^^^^^^^^\nValueError: not enough values to unpack (expected 2, got 1)\n\n======================================================================\nERROR: test_missing_closing_delimiter_is_plain_body (test_frontmatter_parser.FrontmatterParserTests.test_missing_closing_delimiter_is_plain_body)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Temp\\case_003_frontmatter_colon_values-wrndkmef\\repo\\test_frontmatter_parser.py\", line 15, in test_missing_closing_delimiter_is_plain_body\n    meta, body = parse_frontmatter(text)\n                 ~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Temp\\case_003_frontmatter_colon_values-wrndkmef\\repo\\frontmatter_parser.py\", line 5, in parse_frontmatter\n    _, header, body = text.split(\"---\", 2)\n    ^^^^^^^^^^^^^^^\nValueError: not enough values to unpack (expected 3, got 2)\n\n======================================================================\nERROR: test_value_can_contain_colon (test_frontmatter_parser.FrontmatterParserTests.test_value_can_contain_colon)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Temp\\case_003_frontmatter_colon_values-wrndkmef\\repo\\test_frontmatter_parser.py\", line 8, in test_value_can_contain_colon\n    meta, body = parse_frontmatter(\"---\\ntitle: Agent: Tools\\nkind: note\\n---\\nBody\")\n                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Administrator\\AppData\\Local\\Temp\\case_003_frontmatter_colon_values-wrndkmef\\repo\\frontmatter_parser.py\", line 8, in parse_frontmatter\n    key, value = line.split(\":\")\n    ^^^^^^^^^^\nValueError: too many values to unpack (expected 2)\n\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nFAILED (errors=3)\n"
+      },
+      "final": {
+        "command": "D:\\soft\\Python313\\python.exe -m unittest discover -s . -p \"test_*.py\"",
+        "returncode": 0,
+        "passed": true,
+        "duration_seconds": 0.142,
+        "stdout_tail": "",
+        "stderr_tail": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+      },
+      "agent": null,
+      "changed_files": [
+        "frontmatter_parser.py"
+      ],
+      "tests_modified": [],
+      "workdir": null
+    }
+  ]
+}
